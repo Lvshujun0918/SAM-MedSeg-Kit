@@ -1,4 +1,4 @@
-# From SAM 1 to SAM 3: Benchmarking Cross-Modality Medical Image Segmentation
+# SAM-MedSeg-Kit
 
 ## 📖 项目概述
 
@@ -38,15 +38,6 @@
 ├── ├── Synapse_data_sam1_seg.py        # Synapse 使用 SAM1 分割
 ├── ├── Synapse_data_sam2_seg.py        # Synapse 使用 SAM2 分割
 ├── └── Synapse_data_sam3_seg.py        # Synapse 使用 SAM3 分割
-├── 
-└── fig/                                # 图表生成模块
-    ├── fig_cmp.py                      # 模型对比图表
-    ├── fig_sam1.py                     # SAM1 性能图表
-    ├── fig_sam2.py                     # SAM2 性能图表
-    ├── fig_sam3.py                     # SAM3 性能图表
-    ├── gen_dataset_figures.py          # 数据集可视化
-    ├── measure_params_flops.py         # 参数/FLOPS 计算
-    └── paper_figures_and_verify.py     # 论文验证与补充图表
 ```
 
 
@@ -198,34 +189,6 @@ results_df = segmenter.segment_directory(
 # 输出: results_df (包含所有图像的 IoU, Dice 等指标)
 ```
 
-
-## 📈 图表生成
-
-所有图表保存在 `Fig/` 目录，支持多种格式（PNG/SVG/PDF）：
-
-```bash
-# 生成论文所需的所有图表
-python fig/paper_figures_and_verify.py
-
-# 生成特定模型的性能图表
-python fig/fig_sam1.py
-python fig/fig_sam2.py
-python fig/fig_sam3.py
-
-# 生成模型对比图表
-python fig/fig_cmp.py
-
-# 计算参数量和 FLOPS
-python fig/measure_params_flops.py
-```
-
-生成的图表包括：
-- 各模型在不同数据集上的 IoU 对比
-- Dice/Hausdorff 分布箱线图
-- 器官/病变级别的细粒度评估
-- 参数量与性能权衡
-
-
 ## 📝 常见工作流
 
 ### 工作流 1：快速评估新数据集
@@ -249,9 +212,6 @@ python {DATASET}_data_sam3_seg.py
 python ACDC_data_sam1_seg.py
 python ACDC_data_sam2_seg.py
 python ACDC_data_sam3_seg.py
-
-# 生成对比图表
-python fig/fig_cmp.py
 ```
 
 ### 工作流 3：从头开始（完整流程）
@@ -272,9 +232,6 @@ done
 python ACDC_data_sam2_seg.py
 python ACDC_data_sam3_seg.py
 # ... 其他数据集
-
-# 4. 生成完整报告和图表
-python fig/paper_figures_and_verify.py
 ```
 
 
@@ -331,12 +288,6 @@ DataRes/ACDC_pro/sam1_preds/
 └── metrics_report.csv          # 评估报告
     ├── image_id | IoU | Dice | Hausdorff | Sensitivity | Specificity
     └── ...
-
-Fig/
-├── fig_sam1_iou_comparison.png
-├── fig_sam2_dice_boxplot.png
-├── fig_cmp_all_models.png
-└── params_flops_analysis.pdf
 ```
 
 
@@ -380,7 +331,7 @@ A: 设置 `CONFIG["device"] = "cpu"`，但会明显变慢。
 - 参考原始数据论文和 SAM 官方文档
 
 **更新日志：**
-- v1.0 (2026-05-16): 初始发布，支持 SAM1/2/3 三个版本
+- v1.0 (2026-05-25): 初始发布，支持 SAM1/2/3 三个版本
 
 ---
 
