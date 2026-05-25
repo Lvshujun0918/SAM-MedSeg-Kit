@@ -310,19 +310,23 @@ DataRes/ACDC_pro/sam1_preds/
 ## 📬 Frequently Asked Questions
 
 **Q1: Model download too slow?**
+
 A: We recommend using a domestic mirror or proxy, or downloading the model in advance and placing it in the `Models/` directory.
 
 **Q2: Not enough GPU VRAM?**
+
 A: Set `batch_size` to 1–2, or use `sam_b.pt` (a smaller model).
 
 **Q3: Poor prediction results?**
+
 A:
 - Check if the input image preprocessing is correct (normalization range)
 - Try upgrading to SAM2/3
 - Adjust the `iou_threshold` parameter
 
 **Q4: How do I use the CPU?**
-A: Set `CONFIG[“device”] = “cpu”`, but this will significantly slow down the process.
+
+A: Set `CONFIG["device"] = "cpu"`, but this will significantly slow down the process.
 
 ## 🤝 Feedback and Support
 
