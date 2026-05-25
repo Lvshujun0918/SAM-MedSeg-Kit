@@ -67,7 +67,7 @@ pip install -r requirements.txt
 Create a `Models/` folder in the project root directory and download the following weights:
 
 | Model | Filename | Size | Source |
-|------|------- -|------|------|
+|------|--------|------|------|
 | SAM1 Large | `sam_l.pt` | 1.2 GB | [Meta AI](https://github.com/facebookresearch/segment-anything) |
 | SAM2 Large | `sam2_l.pt` | 429 MB | [Meta AI](https://github.com/facebookresearch/sam2) |
 | SAM3 | `sam3.pt` | 3.3 GB | [Meta AI](https://github.com/facebookresearch/segment-anything-3) |
