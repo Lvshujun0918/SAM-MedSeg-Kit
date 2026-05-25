@@ -241,18 +241,18 @@ All script configurations are stored in the `CONFIG` dictionary and can be modif
 
 ```python
 CONFIG = {
-    “model”: “Models/sam_l.pt”, # Model weight path
-    ‘image_dir’: “DataSets/ACDC_pro”, # Input directory
-    
-“output_dir”: “DataRes/ACDC_pro/sam1_preds”, # Output directory
-    “batch_size”: 4, # GPU batch size
-    ‘device’: “cuda:0”, # GPU ID
+    "model": "Models/sam_l.pt",        # Model weight path
+    "image_dir": "DataSets/ACDC_pro",  # Input directory
+    "output_dir": "DataRes/ACDC_pro/sam1_preds",  # Output directory
+    "batch_size": 4,                   # GPU batch size
+    "device": "cuda:0",                # GPU ID
 }
 ```
 
 **Common Adjustments:**
+
 | Configuration Item | Purpose | Recommended Value |
-|------- -|------|--------|
+|--------|------|--------|
 | `model` | Model weights | `sam_b.pt` (fast) or `sam_l.pt` (strong) |
 | `batch_size` | GPU parallelism | 4-8 (depending on GPU VRAM) |
 | `device` | Computing device | `cuda:0` (GPU) or `cpu` (CPU) |
