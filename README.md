@@ -110,7 +110,7 @@ result = segmenter.segment_image(
     use_auto_prompt=True, # Automatically extract visual prompts
     output_path="output.png"
 )
-print(f“IoU: {result[‘iou’]:.4f}”)
+print(f"IoU: {result['iou']:.4f}")
 
 # Batch segmentation of images in a directory
 segmenter.segment_directory(
@@ -152,9 +152,9 @@ No additional annotation required; the system automatically generates bounding b
 
 ```python
 def extract_prompt_from_vision(img_path):
-    “”“
+    """
     Automatically extract target regions using morphological operations + Otsu thresholding
-    ”“”
+    """
     # Gaussian filter → Morphological gradient → Otsu binarization → Contour detection
     # Return: bbox (x, y, w, h) or None
 ```
